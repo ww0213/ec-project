@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.ec.mybatis.mapper.ProductMapper">
+
+    <select id="getProductsByPage" parameterType="map" resultType="com.example.ec.model.Product">
+        SELECT p.*
+        FROM Products p
+        WHERE p.id >
+              (SELECT id FROM Products ORDER BY id LIMIT 1 OFFSET #{offset})
+        ORDER BY p.id
+            LIMIT #{pageSize}
+    </select>
+
+</mapper>

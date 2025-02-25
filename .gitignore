@@ -1,0 +1,15 @@
+# Java & IntelliJ
+*.class
+*.log
+*.iml
+.idea/
+.DS_Store
+
+# Maven
+target/
+*.jar
+*.war
+
+# Logs & Temp Files
+logs/
+*.log

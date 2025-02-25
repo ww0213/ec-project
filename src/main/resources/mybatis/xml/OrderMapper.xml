@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.ec.mybatis.mapper.OrderMapper">
+
+    <select id="getOrdersByPage" parameterType="map" resultType="com.example.ec.model.Order">
+        SELECT o.*
+        FROM orders o
+        WHERE o.id >
+              (SELECT id FROM orders ORDER BY id LIMIT 1 OFFSET #{offset})
+        ORDER BY o.id
+            LIMIT #{pageSize}
+    </select>
+
+</mapper>
