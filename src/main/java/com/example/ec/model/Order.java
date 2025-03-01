@@ -29,6 +29,8 @@ public class Order {
 
     private Integer quantity;
 
+    private String type;
+
     private BigDecimal totalPrice;
 
     @Temporal(TemporalType.TIMESTAMP)

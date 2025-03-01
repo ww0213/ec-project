@@ -2,7 +2,6 @@ package com.example.ec.controller;
 
 import com.example.ec.model.Product;
 import com.example.ec.service.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,8 +11,11 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class ProductRestController {
 
-    @Autowired
-    private ProductService productService;
+    private final ProductService productService;
+
+    public ProductRestController(ProductService productService) {
+        this.productService = productService;
+    }
 
     // 使用 MyBatis 進行手動分頁查詢
     @GetMapping
