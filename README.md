@@ -1,17 +1,39 @@
-專案內容:
-RESTful API （Product,order）管理 的 CRUD 功能。
-後端架構：使用 Spring Boot + JPA + MyBatis，整合不同 ORM 技術，JPA 處理一般數據操作，MyBatis 負責 複雜查詢與 SQL 優化。
-前端渲染：提供 JSP 頁面控制器（Controller），支援傳統 Web 頁面開發。
-Docker 部署：編寫 Dockerfile，可將專案容器化並在 Docker 環境執行。
+# Product & Order Management API
 
-API:
-GET /api/products?page=1&size=10 - （MyBatis）分頁查詢商品列表
-GET /api/products/{id} - （JPA）根據 ID 查詢商品
-POST /api/products - （JPA）新增商品
-PUT /api/products/{id} - （JPA）更新商品
-DELETE /api/products/{id} - （JPA）刪除商品
+本專案是一個基於 **Spring Boot** 的 RESTful API，提供商品與訂單的 CRUD 功能，並整合 **JPA** 及 **MyBatis** 以最佳化數據查詢與操作。前端部分提供 **JSP** 頁面渲染，並可透過 **Docker** 部署至容器化環境。
 
-POST /api/orders - （JPA）新增訂單
-PUT /api/orders/{id} - （JPA）更新訂單
+## 技術架構
 
-POST /api/orders/pricing/calculate - 查詢價格 
+- **Spring Boot** - 後端框架
+- **JPA (Hibernate)** - 基本數據操作
+- **MyBatis** - 用於處理複雜查詢與 SQL 優化
+- **Spring MVC** - 提供 JSP 頁面控制器
+- **Docker** - 容器化部署
+
+## API 端點
+
+### 產品管理（Product）
+
+| 方法 | 端點 | 描述 | 使用技術 |
+|------|-------------------------|----------------|------------|
+| GET | `/api/products?page=1&size=10` | 分頁查詢商品列表 | MyBatis |
+| GET | `/api/products/{id}` | 根據 ID 查詢商品 | JPA |
+| POST | `/api/products` | 新增商品 | JPA |
+| PUT | `/api/products/{id}` | 更新商品 | JPA |
+| DELETE | `/api/products/{id}` | 刪除商品 | JPA |
+
+### 訂單管理（Order）
+
+| 方法 | 端點 | 描述 | 使用技術 |
+|------|-------------------------|----------------|------------|
+| POST | `/api/orders` | 新增訂單 | JPA |
+| PUT | `/api/orders/{id}` | 更新訂單 | JPA |
+| POST | `/api/orders/pricing/calculate` | 計算訂單價格 | MyBatis |
+
+## 環境設置與部署
+
+### 1. 下載專案
+
+```sh
+git clone https://github.com/your-repo/product-order-api.git
+cd product-order-api
