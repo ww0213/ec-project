@@ -1,6 +1,7 @@
 package com.example.ec.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 import java.math.BigDecimal;
@@ -21,10 +22,12 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @NotNull(message = "User cannot be null")
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
+    @NotNull(message = "Product cannot be null")
     private Product product;
 
     private Integer quantity;
