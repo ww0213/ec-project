@@ -28,4 +28,4 @@
 |------|-------------------------|----------------|------------|
 | POST | `/api/orders` | 新增訂單 | JPA |
 | PUT | `/api/orders/{id}` | 更新訂單 | JPA |
-| POST | `/api/orders/pricing/calculate` | 計算訂單價格 | MyBatis |
+| POST | `/api/orders/pricing/calculate` | 查詢訂單價格使用何種優惠 | JPA |
