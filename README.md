@@ -29,11 +29,3 @@
 | POST | `/api/orders` | 新增訂單 | JPA |
 | PUT | `/api/orders/{id}` | 更新訂單 | JPA |
 | POST | `/api/orders/pricing/calculate` | 計算訂單價格 | MyBatis |
-
-## 環境設置與部署
-
-### 1. 下載專案
-
-```sh
-git clone https://github.com/your-repo/product-order-api.git
-cd product-order-api
