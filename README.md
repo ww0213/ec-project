@@ -1,4 +1,4 @@
-# Product & Order Management API
+# Management API
 
 本專案是一個基於 **Spring Boot** 的 RESTful API，提供商品與訂單的 CRUD 功能，並整合 **JPA** 及 **MyBatis** 以最佳化數據查詢與操作。前端部分提供 **JSP** 頁面渲染，並可透過 **Docker** 部署至容器化環境。
 
